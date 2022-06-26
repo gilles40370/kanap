@@ -63,7 +63,8 @@ function choiceOption() {
   const color = document.querySelector("#colors").value
   const quantity = document.querySelector("#quantity").value
 
-  if (isOrderInvalid(color, quantity)) return
+  if (isOrderInvalid(color, quantity))
+   return
   saveOrder(color, quantity)
   redirectToCart()
 }
@@ -83,7 +84,7 @@ function saveOrder(color, quantity) {
 }
 function isOrderInvalid(color, quantity) {
   if (color == null || color === "" || quantity == null || quantity == 0) {
-    alert("Merci de choisir une couleur et une quantity!")
+    alert("Merci de choisir une couleur et une quantiter!")
     return true
   }
 }

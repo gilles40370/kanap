@@ -244,7 +244,3 @@ function getIdsInlocalstorage() {
   }
   return ids;
 }
-
-let addressRegExp = new RegExp(
-  "^[0-9]{1,3}(?:(?:[,. ]){1}[-a-zA-Zàâäéèêëïîôöùûüç]+)+"
-);
