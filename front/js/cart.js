@@ -67,16 +67,17 @@ function makeDescription(item) {
   description.appendChild(pPrice);
   return description;
 }
+
 function makeSettings(item) {
   const settings = document.createElement("div");
   settings.classList.add("cart__item__content__settings");
 
   addQuantitySelect(settings, item);
-  deleteToSettings(settings, item);
+  deleteToSettings(settings);
   return settings;
 }
 
-function deleteToSettings(settings, item) {
+function deleteToSettings(settings) {
   const deleteSettings = document.createElement("div");
   deleteSettings.classList.add("cart__item__content__settings__delete");
   deleteSettings.addEventListener("click", () => deleteItem(item));
@@ -138,7 +139,7 @@ function priceAndQuantityAdjustment(id, newValue, item) {
 function saveNewDataInLocalstorage(item) {
   const newDateSave = JSON.stringify(item);
   const key = `${item.id}-${item.color}`;
-  localStorage.setItem(item.id, newDateSave);
+  localStorage.setItem(key, newDateSave);
 }
 
 function displayArticle(article) {
